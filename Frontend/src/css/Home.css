@@ -1,0 +1,68 @@
+.divHome {
+    margin-top: 190px;
+    padding: 10px;
+}
+
+
+.titleHome {
+    font-size: 40px;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(6, 25, 31);
+    background-color: rgb(206, 213, 215);
+    width: 240px;
+    height: 70px;
+    margin-left: 100px;
+    text-align: center;
+    padding-top: 15px;
+    margin-right: 755px;
+    border-radius: 10px;
+    margin-bottom: 57px;
+}
+
+.reviewHome {
+    height: 200px;
+    background-color: rgb(206, 213, 215);
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(6, 25, 31);
+    margin-left: 140px;
+    padding: 10px;
+    width: 1300px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.star {
+    font-size: 25px;
+    margin-right: 640px;
+}
+
+.movieTitleHome {
+    background-color: rgb(206, 213, 215);
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(6, 25, 31);
+    font-weight: bold;
+    font-size: 25px;
+    padding-right: 20px;
+    margin-left: 60px;
+    margin-bottom: 47px;
+}
+
+.descriptionHome {
+    border: 1px solid black;
+    margin: 10px;
+    height: 50px;
+    padding: 10px;
+    width: 900px;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(6, 25, 31);
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 80px;
+    border-radius: 10px;
+}
+
+
+.topHome {
+    display: flex;
+}

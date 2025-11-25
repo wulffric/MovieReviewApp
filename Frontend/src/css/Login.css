@@ -1,0 +1,110 @@
+.divLogin {
+    display: flex;
+    margin-top: 190px;
+    padding: 30px;
+}
+
+.textLogin {
+    font-size: 30px;
+    padding: 10px;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(6, 25, 31);
+    width: fit-content;
+    margin-left: 430px;
+}
+
+.form {
+    font-size: 15px;
+    flex-direction: column;
+    width: 1000px;
+    height: 500px;
+    background-color: rgb(206, 213, 215);
+    border: 2px solid rgb(11, 66, 98);
+    text-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 300px;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.text {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.inputsLogin {
+    border: '1px solid #ccc';
+    border-radius: '8px';
+    text-align: center;
+}
+
+.emailLogin {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 30px;
+    width: 300px;
+    background-color: rgb(132, 130, 127);
+    text-align: center;
+}
+
+.passwordLogin {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 30px;
+    width: 300px;
+    background-color: rgb(132, 130, 127);
+    text-align: center;
+}
+
+::placeholder {
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.button {
+    font-size: 20px;
+    background-color: rgb(1, 16, 97);
+    color: rgb(206, 213, 215);
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 300px;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.button:hover {
+    color: rgb(1, 16, 97);
+    background-color: rgb(206, 213, 215);
+    border: 2px solid rgb(1, 16, 97);
+    padding: 19px;
+}
+
+.button:active {
+    background-color: rgb(1, 16, 97);
+    box-shadow: 0 2px rgb(5, 36, 54);
+    border: 2px solid rgb(1, 16, 97);
+    transform: translateY(4px);
+    color: rgb(206, 213, 215);
+}
+
+.smallText {
+    font-weight: bold;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: black;
+    font-size: 15px;
+}
+
+.linkLogin {
+    color: black;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 15px;
+    text-decoration: underline;
+}

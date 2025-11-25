@@ -1,0 +1,6 @@
+/* Style for the background of all pages */
+.App {
+  background-color: rgb(1, 16, 97);
+  width: 1680px;
+  height: 760px;
+}
