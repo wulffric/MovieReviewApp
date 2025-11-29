@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useUser } from "../contexts/UserContext.jsx";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; // 1. Import useNavigate
 
-export default function Login() {
+export default function Signup() {
   const { login } = useUser();
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); // 2. Initialize useNavigate
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -14,22 +15,21 @@ export default function Login() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/users/login", {
+      const res = await fetch("http://localhost:5000/api/users/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
       });
 
       const data = await res.json();
 
-      if (!res.ok) throw new Error(data.message || "Login failed");
+      if (!res.ok) throw new Error(data.message || "Registration failed");
 
       // save user in context
       login(data);
 
-      // redirect to home using React Router's navigate function (No full page reload!)
-      navigate("/"); // Recommended: redirect to the root path "/" 
-                     // (or use navigate("/home") if you prefer that route)
+      // 3. Redirect to home using React Router's navigate function
+      navigate("/"); // Redirect to the canonical home path (or use navigate("/home"))
     } catch (err) {
       setError(err.message);
     }
@@ -37,9 +37,17 @@ export default function Login() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>Login</h2>
+      <h2 style={styles.title}>Sign Up</h2>
       {error && <p style={styles.error}>{error}</p>}
       <form onSubmit={handleSubmit} style={styles.form}>
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          style={styles.input}
+        />
         <input
           type="email"
           placeholder="Email"
@@ -56,12 +64,11 @@ export default function Login() {
           required
           style={styles.input}
         />
-        <button type="submit" style={styles.button}>Login</button>
+        <button type="submit" style={styles.button}>Sign Up</button>
       </form>
       <p>
-        Not registered? 
-        {/* Use Link or navigate in the future, but for now, we'll leave the anchor tag */}
-        <a href="/register" style={{ color: "#fff" }}>Sign Up</a>
+        Already have an account? 
+        <a href="/login" style={{ color: "#fff" }}>Login</a>
       </p>
     </div>
   );

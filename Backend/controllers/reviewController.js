@@ -1,63 +1,57 @@
-import Review from "../models/Review.js";
+import Review from "../models/reviewModel.js";
 
-const createReview = async (req, res) => {
+export const getReviews = async (req, res) => {
   try {
-    const { movie, rating, comment } = req.body;
-
-    if (!movie || !rating) {
-      return res.status(400).json({ message: "Movie and rating are required" });
-    }
-
-    const review = new Review({
-      user: req.user._id,
-      movie,
-      rating,
-      comment,
-    });
-
-    const createdReview = await review.save();
-    res.status(201).json(createdReview);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-const getReviewsByMovie = async (req, res) => {
-  try {
-    const reviews = await Review.find({ movie: req.params.movieId }).populate("user", "name email");
+    const reviews = await Review.find().populate("user", "name email");
     res.json(reviews);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };
 
-const updateReview = async (req, res) => {
+export const createReview = async (req, res) => {
+  const { content } = req.body;
+
+  if (!req.user) return res.status(401).json({ message: "Not authorized" });
+
   try {
-    const review = await Review.findById(req.params.id);
-    if (!review) return res.status(404).json({ message: "Review not found" });
-    if (review.user.toString() !== req.user._id.toString()) return res.status(403).json({ message: "Not authorized" });
-
-    review.rating = req.body.rating || review.rating;
-    review.comment = req.body.comment || review.comment;
-
-    const updatedReview = await review.save();
-    res.json(updatedReview);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+    const review = await Review.create({ content, user: req.user._id });
+    res.status(201).json(review);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };
 
-const deleteReview = async (req, res) => {
+export const updateReview = async (req, res) => {
+  const { id } = req.params;
+  const { content } = req.body;
+
   try {
-    const review = await Review.findById(req.params.id);
+    const review = await Review.findById(id);
     if (!review) return res.status(404).json({ message: "Review not found" });
-    if (review.user.toString() !== req.user._id.toString()) return res.status(403).json({ message: "Not authorized" });
+    if (review.user.toString() !== req.user._id.toString())
+      return res.status(403).json({ message: "Not authorized to edit" });
+
+    review.content = content || review.content;
+    await review.save();
+    res.json(review);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+export const deleteReview = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const review = await Review.findById(id);
+    if (!review) return res.status(404).json({ message: "Review not found" });
+    if (review.user.toString() !== req.user._id.toString())
+      return res.status(403).json({ message: "Not authorized to delete" });
 
     await review.remove();
     res.json({ message: "Review deleted" });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };
-
-export { createReview, getReviewsByMovie, updateReview, deleteReview };
