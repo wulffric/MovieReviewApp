@@ -1,0 +1,53 @@
+.navBar {
+    height: 120px;
+    width: 100%;
+    background-Color: rgb(206, 213, 215);
+    padding-bottom: 70px;
+    position: fixed;
+    top: 0;
+}
+
+.top {
+    display: flex;
+    margin-left: 60px;
+}
+
+.logo {
+    height: 160px;
+    width: 160px;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.title {
+    font-Size: 50px;
+    text-Align: center;
+    padding-left: 100px;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    margin-left: 180px;
+}
+
+.link {
+    display: inline-flex;
+    font-size: 27px;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(206, 213, 215);
+    width: 100%;
+    padding-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: right;
+}
+
+.links {
+    margin-left: 60px;
+    color: rgb(0, 0, 0);
+    padding-right: 50px;
+    font-weight: bolder;
+}
+
+.links:hover {
+    color: rgb(100, 107, 112);
+}

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
 async function handleResponse(res) {
   const data = await res.json();
@@ -7,8 +7,6 @@ async function handleResponse(res) {
   }
   return data;
 }
-
-// --- User endpoints ---
 
 export async function registerUser({ name, email, password }) {
   const res = await fetch(`${API_URL}/users/register`, {
@@ -49,8 +47,6 @@ export async function deleteUser(id, token) {
   });
   return handleResponse(res);
 }
-
-// --- Review endpoints ---
 
 export async function getReviews() {
   const res = await fetch(`${API_URL}/reviews`);

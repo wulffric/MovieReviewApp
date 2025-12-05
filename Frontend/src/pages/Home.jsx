@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <div style={styles.page}>
       <main style={styles.main}>
-        {/* Placeholder for Team's Logo */}
-        {/* Replace the h1 content with your team's logo/image tag if available */}
         <h1 style={styles.heroTitle}>🎬 Movie Review App</h1> 
         <p style={styles.heroSubtitle}>
           Honest opinions. Real reviews. Join the community.
         </p>
-
+        <p style={styles.heroSubtitle}>
+          This is a test paragraph for the CI/CD deployment demonstration.
+        </p>
         <div style={styles.actions}>
           <a href="/reviews" style={styles.primaryButton}>Browse Reviews</a>
           {!user && <a href="/register" style={styles.secondaryButton}>Join Now</a>}
@@ -68,3 +68,5 @@ const styles = {
     cursor: "pointer",
   },
 };
+
+

@@ -1,0 +1,53 @@
+.divHome {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titleHome {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.reviewsContainerHome {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviewCardHome {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.reviewCardHome:hover {
+  transform: translateY(-5px);
+}
+
+.reviewTopHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.movieTitleHome {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.starHome {
+  color: #ffb400;
+  font-size: 1.1rem;
+}
+
+.descriptionHome {
+  font-size: 1rem;
+  color: #333;
+}
