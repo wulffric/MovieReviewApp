@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "jest --watchAll=false --runInBand",
-    "test:unit": "jest --runInBand"
+    "test:unit": "jest --runInBand",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^19.2.0",
