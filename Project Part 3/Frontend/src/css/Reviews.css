@@ -1,0 +1,116 @@
+.divReview {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titleReview {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.formReview {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.inputReview, .textareaReview {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.textareaReview {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.buttonReview {
+  padding: 12px;
+  background-color: #4b6cb7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.buttonReview:hover {
+  background-color: #182848;
+}
+
+.reviewsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviewCard {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.reviewTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.movieTitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.star {
+  color: #ffb400;
+  font-size: 1.1rem;
+}
+
+.reviewDescription {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.reviewActions {
+  display: flex;
+  gap: 10px;
+}
+
+.buttonEdit, .buttonDelete {
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buttonEdit {
+  background-color: #4b6cb7;
+  color: white;
+}
+
+.buttonEdit:hover {
+  background-color: #182848;
+}
+
+.buttonDelete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.buttonDelete:hover {
+  background-color: #c0392b;
+}
